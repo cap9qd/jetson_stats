@@ -419,7 +419,7 @@ class JtopServer(Process):
             'NVDEC': tegrastats['NVDEC'] if 'NVDEC' in tegrastats else {},
             'MSENC': tegrastats['MSENC'] if 'MSENC' in tegrastats else {}}
         if nvjpg_data:
-            data['engines']['NVJPG'] = nvjpg_data if nvjpg_data['status'] else {}
+            data['engines']['NVJPG'] = nvjpg_data['rate'] if nvjpg_data['status'] else {}
         # -- Power --
         # Refactor names
         power = {k.replace("VDD_", "").replace("POM_", "").replace("_", " "): v for k, v in tegrastats['WATT'].items()}
