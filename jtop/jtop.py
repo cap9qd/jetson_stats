@@ -554,7 +554,7 @@ class jtop(Thread):
         stats['NVENC'] = self.engine.nvenc['val'] if self.engine.nvenc else 'OFF'
         stats['NVDEC'] = self.engine.nvdec['val'] if self.engine.nvdec else 'OFF'
         print("type(self.engine.nvjpg) = %s " % type(self.engine.nvjpg))
-        stats['NVJPG'] = self.engine.nvjpg if self.engine.nvjpg is int else 'OFF'
+        stats['NVJPG'] = self.engine.nvjpg if type(self.engine.nvjpg) is int else 'OFF'
         if self.engine.msenc:
             stats['MSENC'] = self.engine.msenc
         # -- FAN --
